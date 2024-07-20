@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sensor Data</title>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
+    }
+    #chart {
+      margin-top: 20px;
+    }
+    .buttons {
+      margin: 20px;
+    }
+    .buttons button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    #loading {
+      display: none;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sensor Data</h1>
+  <div id="chart"></div>
+  <div class="buttons">
+    <button onclick="fetchData('lastHour')">Last Hour</button>
+    <button onclick="fetchData('last24Hours')">Last 24 Hours</button>
+    <button onclick="fetchData('last7Days')">Last 7 Days</button>
+  </div>
+  <div id="loading">Loading...</div>
+
+  <script>
+    let chart;
+    let lastTimestamp = 0;
+
+    function showLoading(show) {
+      const loadingDiv = document.getElementById('loading');
+      loadingDiv.style.display = show ? 'block' : 'none';
+    }
+
+    function updateChart(data) {
+      showLoading(false);
+      if (!data) {
+        console.log("No data available");
+        return;
+      }
+
+      let humidityData = [];
+      let temperatureData = [];
+
+      Object.keys(data).forEach((date) => {
+        const dayData = data[date];
+        Object.keys(dayData).forEach((time) => {
+          const readings = dayData[time];
+          Object.keys(readings).forEach((id) => {
+            const reading = readings[id];
+            if (reading && reading.humidity && reading.temperature && reading.epoch) {
+              let timestamp = reading.epoch * 1000; // Convert to milliseconds
+              humidityData.push([timestamp, parseFloat(reading.humidity)]);
+              temperatureData.push([timestamp, parseFloat(reading.temperature)]);
+            }
+          });
+        });
+      });
+
+      console.log("Humidity Data:", humidityData);
+      console.log("Temperature Data:", temperatureData);
+
+      chart.updateSeries([
+        { name: 'Humidity', data: humidityData },
+        { name: 'Temperature', data: temperatureData }
+      ]);
+    }
+
+    function fetchData(range) {
+      showLoading(true);
+      
+      let startTime;
+      let interval;
+
+      switch (range) {
+        case 'lastHour':
+          startTime = lastTimestamp - (60 * 60 * 1000);
+          interval = 5 * 60 * 1000; // 5 minutes in milliseconds
+          break;
+        case 'last24Hours':
+          startTime = lastTimestamp - (24 * 60 * 60 * 1000);
+          interval = 10 * 60 * 1000; // 10 minutes in milliseconds
+          break;
+        case 'last7Days':
+          startTime = lastTimestamp - (7 * 24 * 60 * 60 * 1000);
+          interval = 1 * 60 * 60 * 1000; // 1 hour in milliseconds
+          break;
+        default:
+          return;
+      }
+
+      console.log("Querying data from", new Date(startTime), "to", new Date(lastTimestamp));
+
+      const sensorDataRef = firebase.database().ref('/sensorData');
+
+      sensorDataRef.once('value', (snapshot) => {
+        const data = snapshot.val();
+        console.log("All data from Firebase:", data);
+
+        if (data) {
+          const filteredData = {};
+          let lastFilteredTimestamp = 0;
+
+          Object.keys(data).forEach(date => {
+            Object.keys(data[date]).forEach(time => {
+              const readings = data[date][time];
+              Object.keys(readings).forEach(id => {
+                const reading = readings[id];
+                const timestamp = reading.epoch * 1000;
+                if (timestamp >= startTime && timestamp <= lastTimestamp && timestamp - lastFilteredTimestamp >= interval) {
+                  if (!filteredData[date]) {
+                    filteredData[date] = {};
+                  }
+                  if (!filteredData[date][time]) {
+                    filteredData[date][time] = {};
+                  }
+                  filteredData[date][time][id] = reading;
+                  lastFilteredTimestamp = timestamp;
+                }
+              });
+            });
+          });
+
+          console.log("Filtered data:", filteredData);
+
+          if (Object.keys(filteredData).length > 0) {
+            updateChart(filteredData);
+          } else {
+            console.log("No data available for the selected range");
+            chart.updateSeries([
+              { name: 'Humidity', data: [] },
+              { name: 'Temperature', data: [] }
+            ]);
+          }
+        } else {
+          console.log("No data available in the database");
+          chart.updateSeries([
+            { name: 'Humidity', data: [] },
+            { name: 'Temperature', data: [] }
+          ]);
+        }
+      }, (error) => {
+        console.error('Error fetching data:', error);
+        showLoading(false);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const firebaseConfig = {
+        apiKey: "AIzaSyBtxx4lt7QH1zwcoFyZ1EV9hxxGeOqSBc0",
+        authDomain: "fy-project-e3584.firebaseapp.com",
+        projectId: "fy-project-e3584",
+        storageBucket: "fy-project-e3584.appspot.com",
+        messagingSenderId: "581897569996",
+        appId: "1:581897569996:web:42168866f81ba2bd2de469",
+        measurementId: "G-W64NB0VH5E",
+        databaseURL: "https://fy-project-e3584-default-rtdb.firebaseio.com"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+      // Fetch the last entry to get the latest timestamp
+      firebase.database().ref('/sensorData').limitToLast(1).once('value', (snapshot) => {
+        const data = snapshot.val();
+        console.log("Test read - Last entry:", data);
+
+        // Extract the last timestamp
+        if (data) {
+          const lastDate = Object.keys(data).pop();
+          const lastTime = Object.keys(data[lastDate]).pop();
+          const lastReading = data[lastDate][lastTime];
+          const lastReadingId = Object.keys(lastReading).pop();
+          lastTimestamp = lastReading[lastReadingId].epoch * 1000; // Convert to milliseconds
+
+          console.log("Last timestamp:", new Date(lastTimestamp));
+
+          // Initialize the chart
+          let chartOptions = {
+            chart: {
+              type: 'line',
+              height: 500,
+              animations: {
+                enabled: true,
+                easing: 'linear',
+                dynamicAnimation: {
+                  speed: 1000
+                }
+              }
+            },
+            series: [
+              { name: 'Humidity', data: [] },
+              { name: 'Temperature', data: [] }
+            ],
+            xaxis: {
+              type: 'datetime',
+              labels: {
+                format: 'dd MMM HH:mm'
+              }
+            },
+            yaxis: [
+              {
+                title: { text: 'Humidity (%)' },
+                max: 100
+              },
+              {
+                opposite: true,
+                title: { text: 'Temperature (°C)' },
+                max: 50
+              }
+            ],
+            legend: { position: 'top' },
+            stroke: { curve: 'smooth' }
+          };
+
+          chart = new ApexCharts(document.querySelector("#chart"), chartOptions);
+          chart.render();
+
+          // Fetch data for the last 24 hours by default
+          fetchData('last24Hours');
+        } else {
+          console.error("No data available in the database");
+        }
+      }, (error) => {
+        console.error("Test read error:", error);
+      });
+    });
+  </script>
+</body>
+</html>

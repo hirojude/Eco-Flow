@@ -1,0 +1,275 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState } from 'react';
+import { Box, Flex, Text, useColorModeValue, Input } from '@chakra-ui/react';
+import LineChart from '../../../components/charts/LineChart'; // Adjust the path as necessary
+import Card from '../../../components/card/Card';
+// import { environmentalData, chartOptions } from './chartData';
+
+ const environmentalData = [
+    {
+      name: 'Temperature',
+      data: [
+        { x: new Date('2024-06-01').getTime(), y: 55 },
+        { x: new Date('2024-06-02').getTime(), y: 68 },
+        { x: new Date('2024-06-03').getTime(), y: 77 },
+        { x: new Date('2024-06-04').getTime(), y: 28 },
+        { x: new Date('2024-06-05').getTime(), y: 79 },
+        { x: new Date('2024-06-06').getTime(), y: 60 },
+        { x: new Date('2024-06-07').getTime(), y: 51 },
+        { x: new Date('2024-06-08').getTime(), y: 42 },
+        { x: new Date('2024-06-09').getTime(), y: 13 },
+        { x: new Date('2024-06-10').getTime(), y: 34 },
+        { x: new Date('2024-06-11').getTime(), y: 55 },
+        { x: new Date('2024-06-12').getTime(), y: 76 }
+      ]
+    },
+    {
+      name: 'Humidity',
+      data: [
+        { x: new Date('2024-06-01').getTime(), y: 32 },
+        { x: new Date('2024-06-02').getTime(), y: 53 },
+        { x: new Date('2024-06-03').getTime(), y: 74 },
+        { x: new Date('2024-06-04').getTime(), y: 35 },
+        { x: new Date('2024-06-05').getTime(), y: 67 },
+        { x: new Date('2024-06-06').getTime(), y: 24 },
+        { x: new Date('2024-06-07').getTime(), y: 6 },
+        { x: new Date('2024-06-08').getTime(), y: 47 },
+        { x: new Date('2024-06-09').getTime(), y: 58 },
+        { x: new Date('2024-06-10').getTime(), y: 89 },
+        { x: new Date('2024-06-11').getTime(), y: 70 },
+        { x: new Date('2024-06-12').getTime(), y: 91 }
+      ]
+    }
+  ];
+  
+ const chartOptions: any = {
+    chart: {
+      toolbar: {
+        show: true
+      },
+      zoom: {
+        enabled: true
+      },
+      dropShadow: {
+        enabled: true,
+        top: 13,
+        left: 0,
+        blur: 10,
+        opacity: 0.1,
+        color: '#4318FF'
+      }
+    },
+    xaxis: {
+      type: 'datetime',
+      title: {
+        text: 'Time'
+      },
+      labels: {
+        style: {
+          colors: '#A3AED0',
+          fontSize: '12px',
+          fontWeight: '500'
+        }
+      },
+      axisBorder: {
+        show: false
+      }
+    },
+    yaxis: {
+      title: {
+        text: 'Value'
+      },
+      labels: {
+        style: {
+          colors: '#A3AED0',
+          fontSize: '12px',
+          fontWeight: '500'
+        }
+      }
+    },
+    legend: {
+      show: true
+    },
+    markers: {
+      size: 0,
+      colors: 'white',
+      strokeColors: '#7551FF',
+      strokeWidth: 3,
+      strokeOpacity: 0.9,
+      strokeDashArray: 0,
+      fillOpacity: 1,
+      discrete: [],
+      shape: 'circle',
+      radius: 2,
+      offsetX: 0,
+      offsetY: 0,
+      showNullDataPoints: true
+    },
+    stroke: {
+      curve: 'smooth',
+      type: 'line'
+    },
+    tooltip: {
+      theme: 'dark'
+    },
+    grid: {
+      show: false,
+      column: {
+        color: ['#7551FF', '#39B8FF'],
+        opacity: 0.5
+      }
+    },
+    annotations: {
+      yaxis: [
+        {
+          y: 70,
+          borderColor: 'green',
+          label: {
+            borderColor: 'green',
+            style: {
+              color: '#fff',
+              background: 'green'
+            },
+            text: 'Optimal'
+          }
+        },
+        {
+          y: 25,
+          borderColor: 'yellow',
+          label: {
+            borderColor: 'yellow',
+            style: {
+              color: '#fff',
+              background: 'yellow'
+            },
+            text: 'Caution'
+          }
+        },
+        {
+          y: 10,
+          borderColor: 'red',
+          label: {
+            borderColor: 'red',
+            style: {
+              color: '#fff',
+              background: 'red'
+            },
+            text: 'Dry'
+          }
+        }
+      ]
+    }
+  };
+  
+
+
+
+
+
+
+const EnvironmentalChart = () => {
+  const [thresholds, setThresholds] = useState({
+    optimal: 70,
+    caution: 25,
+    dry: 10
+  });
+
+  // Chakra UI color modes
+  const textColor = useColorModeValue('secondaryGray.900', 'white');
+
+  // Handle threshold change
+  const handleThresholdChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = event.target;
+    setThresholds({
+      ...thresholds,
+      [name]: Number(value)
+    });
+  };
+
+  // Update chart options with new thresholds
+  const updatedChartOptions = {
+    ...chartOptions,
+    annotations: {
+      yaxis: [
+        {
+          y: thresholds.optimal,
+          borderColor: 'green',
+          label: {
+            borderColor: 'green',
+            style: {
+              color: '#fff',
+              background: 'green'
+            },
+            text: 'Optimal'
+          }
+        },
+        {
+          y: thresholds.caution,
+          borderColor: 'yellow',
+          label: {
+            borderColor: 'yellow',
+            style: {
+              color: '#fff',
+              background: 'yellow'
+            },
+            text: 'Caution'
+          }
+        },
+        {
+          y: thresholds.dry,
+          borderColor: 'red',
+          label: {
+            borderColor: 'red',
+            style: {
+              color: '#fff',
+              background: 'red'
+            },
+            text: 'Dry'
+          }
+        }
+      ]
+    }
+  };
+
+  return (
+    <Card >
+      <Box>
+        <Flex flexDirection="column" mb="20px">
+          <Text color={textColor} fontSize="xl" fontWeight="700" mb="10px">
+            Environmental Factors Chart
+          </Text>
+          <Flex mb="10px">
+            <Input
+              type="number"
+              placeholder="Optimal Threshold"
+              name="optimal"
+              value={thresholds.optimal}
+              onChange={handleThresholdChange}
+              mr="5px"
+            />
+            <Input
+              type="number"
+              placeholder="Caution Threshold"
+              name="caution"
+              value={thresholds.caution}
+              onChange={handleThresholdChange}
+              mr="5px"
+            />
+            <Input
+              type="number"
+              placeholder="Dry Threshold"
+              name="dry"
+              value={thresholds.dry}
+              onChange={handleThresholdChange}
+            />
+          </Flex>
+        </Flex>
+        <Box minH="260px" minW="75%"  mt="auto" h="400px">
+          <LineChart chartData={environmentalData} chartOptions={updatedChartOptions} />
+        </Box>
+      </Box>
+    </Card>
+  );
+};
+
+export default EnvironmentalChart;

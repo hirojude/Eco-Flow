@@ -1,0 +1,68 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ChakraProvider, Box, Flex, useDisclosure } from '@chakra-ui/react';
+import Navbar from './components/navbar/NavbarAdmin';
+import Sidebar from './components/sidebar/Sidebar';
+import SidebarResponsive from './components/sidebar/Sidebar';
+import routes from './routes';
+
+interface RouteType {
+  path: string;
+  component: React.ComponentType;
+  layout: string;
+}
+
+const App: React.FC = () => {
+  const { onOpen } = useDisclosure();
+
+  const getActiveRoute = (routes: RoutesType[]): string => {
+		const activeRoute = 'Default Brand Text';
+		for (let i = 0; i < routes.length; i++) {
+			if (window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1) {
+				return routes[i].name;
+			}
+		}
+		return activeRoute;
+	};
+
+  const getActiveNavbarText = (routes: RoutesType[]): string | boolean => {
+		const activeNavbar = false;
+		for (let i = 0; i < routes.length; i++) {
+			if (window.location.href.indexOf(routes[i].layout + routes[i].path) !== -1) {
+				return routes[i].name;
+			}
+		}
+		return activeNavbar;
+	};
+
+  return (
+    <ChakraProvider>
+      <Router>
+        <Flex>
+          {/* Sidebar for larger screens */}
+          <Sidebar routes={routes} />
+          
+          {/* Responsive Sidebar for smaller screens */}
+          <SidebarResponsive routes={routes} />
+          
+          {/* Main content area */}
+          <Box flex="1" ml={{ base: 0, xl: '300px' }} p="4">
+            <Navbar secondary={false} message={getActiveNavbarText(routes)} brandText={getActiveRoute(routes)} logoText={''} fixed={false} onOpen={ onOpen 
+            } />
+            <Routes>
+              {routes.map((route: RouteType, index: number) => (
+                <Route
+                  key={index}
+                  path={`${route.layout}${route.path}`}
+                  element={<route.component />}
+                />
+              ))}
+            </Routes>
+          </Box>
+        </Flex>
+      </Router>
+    </ChakraProvider>
+  );
+};
+
+export default App;

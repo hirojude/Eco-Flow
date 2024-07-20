@@ -1,0 +1,121 @@
+import React, { useEffect, useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import {
+  Box,
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  Text,
+  Heading,
+  Flex,
+  Center,
+  useColorModeValue,
+  useBreakpointValue,
+} from "@chakra-ui/react";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { db } from "../../../../config/firebaseConfig";
+import AddFieldForm from "./AddFieldForm";
+import FieldList from "./FieldList";
+import FieldItem from "./FieldItem";
+
+interface Field {
+  name: string;
+  sensors: string[];
+  crops: string[];
+}
+
+const ProfilePage = () => {
+  const textColor = useColorModeValue("navy.700", "white");
+  const { userId } = useParams();
+  const [location, setLocation] = useState("");
+  const [fields, setFields] = useState<Field[]>([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      if (userId) {
+        try {
+          const userDoc = await getDoc(doc(db, "users", userId));
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            setLocation(userData.location || "");
+            setFields(userData.fields || []);
+          }
+        } catch (error) {
+          console.error("Error fetching user data: ", error);
+        }
+      }
+    };
+    fetchUserData();
+  }, [userId]);
+
+  const handleSubmit = async () => {
+    if (userId) {
+      try {
+        await updateDoc(doc(db, "users", userId), {
+          location,
+          fields,
+        });
+        alert("Information saved successfully!");
+        navigate("/admin/default");
+      } catch (error) {
+        console.error("Error saving profile data: ", error);
+      }
+    }
+  };
+
+  return (
+    <Center w="100%">
+      <Flex
+        maxW={{ base: "100%", md: "max-content" }}
+        w="100%"
+        mx={{ base: "auto", lg: "0px" }}
+        me="auto"
+        h="90vh"
+        alignItems="center"
+        justifyContent="center"
+        mb={{ base: "30px", md: "0px" }}
+        px={{ base: "25px", md: "0px" }}
+        mt={{ base: "40px", md: "10px" }}
+        flexDirection="column"
+      >
+        <Heading color={textColor} textAlign="center">Profile Page</Heading>
+        <Flex direction={{ base: "column", md: "row" }} align="center" justify="space-around" h="600px" p={4} gap="10%" w="100%" mx={{ base: "10%" }}>
+          <Box gap={5} maxW="md" w="390px" minH="365px">
+            <FormControl id="location">
+              <FormLabel
+                ms="4px"
+                fontSize="lg"
+                fontWeight="500"
+                color={textColor}
+                mb="20px"
+                textAlign="center"
+              >
+                Location
+              </FormLabel>
+              <Input
+                isRequired={true}
+                variant="auth"
+                fontSize="sm"
+                ms={{ base: "0px", md: "0px" }}
+                type="text"
+                placeholder="Enter location"
+                mb="24px"
+                fontWeight="500"
+                size="lg"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+              <FieldList fields={fields} />
+              <AddFieldForm userId={userId!} onFieldAdded={handleSubmit} />
+            </FormControl>
+          </Box>
+          <Button colorScheme="blue" onClick={handleSubmit}>Save Profile</Button>
+        </Flex>
+      </Flex>
+    </Center>
+  );
+};
+
+export default ProfilePage;

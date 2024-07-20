@@ -1,0 +1,64 @@
+// src/components/MainDashboard.tsx
+import React from 'react';
+import { Box, Grid, SimpleGrid, Text } from '@chakra-ui/react';
+import WeatherCard from '../../../components/Weather/WeatherCard';
+import TotalSpent from './TotalSpent';
+import SoilMoistureChart from '../Monitoring/SoilMoistureChart';
+import useSensorData from '../../../components/SenorComponenets/useSensorData';
+import SensorProgressBar from '../../../components/SenorComponenets/SensorProgressBar';
+
+
+const MainDashboard: React.FC = () => {
+  const { sensorData, loading, error } = useSensorData();
+
+  if (loading) {
+    return <Text>Loading...</Text>;
+  }
+
+  if (error) {
+    return <Text>Error: {error}</Text>;
+  }
+
+  if (!sensorData) {
+    return <Text>No data available</Text>;
+  }
+
+  return (
+    <Box pt={{ base: '130px', md: '80px', xl: '80px' }}>
+      <Grid templateColumns={{ base: '1fr', md: '1fr 380px' }} gap="20px">
+        <SimpleGrid columns={{ base: 1, md: 1 }} spacing={5}>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+            <Box>
+              <SensorProgressBar name="Temperature" value={sensorData.temperature} maxValue={50} size="120px" />
+            </Box>
+            <Box>
+              <SensorProgressBar name="Humidity" value={sensorData.humidity} maxValue={100} size="120px" />
+            </Box>
+            <Box>
+              <SensorProgressBar name="Soil Moisture" value={sensorData.soilMoisture} maxValue={1024} size="120px" />
+            </Box>
+            <Box>
+              <SensorProgressBar name="Rain Sensor" value={sensorData.rainSensor} maxValue={1} size="120px" />
+            </Box>
+          </SimpleGrid>
+          <TotalSpent />
+          <SoilMoistureChart />
+        </SimpleGrid>
+
+        <Box>
+          <WeatherCard
+            temperature={45}
+            windspeed={23}
+            humidity={42}
+            place={'kumasi'}
+            heatIndex={24}
+            iconString={'clear'}
+            conditions={'Sunny'}
+          />
+        </Box>
+      </Grid>
+    </Box>
+  );
+};
+
+export default MainDashboard;

@@ -1,0 +1,1138 @@
+{
+    "Crops": [
+        {
+            "CropId": 1,
+            "name": "Cocoa",
+            "localEnglishName": "Cocoa",
+            "localName": "Koko (Twi)",
+            "type": "Tree Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 1,
+                    "weekly": 7,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 50,
+            "soilType": "Well-drained, loamy soil"
+        },
+        {
+            "CropId": 2,
+            "name": "Cashew",
+            "localEnglishName": "Cashew",
+            "localName": "Kaju (Twi)",
+            "type": "Tree Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 100,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 3,
+            "name": "Shea nuts",
+            "localEnglishName": "Shea nuts",
+            "localName": "Nkuto (Twi)",
+            "type": "Tree Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 1,
+                    "weekly": 7,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 70,
+            "soilType": "Clay-loam"
+        },
+        {
+            "CropId": 4,
+            "name": "Plantains",
+            "localEnglishName": "Plantains",
+            "localName": "Borɔdeɛ (Twi)",
+            "type": "Fruit",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 5,
+                    "weekly": 35,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 7,
+                    "weekly": 49,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 7,
+                    "weekly": 49,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 60,
+            "soilType": "Rich, well-drained soil"
+        },
+        {
+            "CropId": 5,
+            "name": "Maize",
+            "localEnglishName": "Corn",
+            "localName": "Aburo (Twi)",
+            "type": "Grain",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 150,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 6,
+            "name": "Pineapples",
+            "localEnglishName": "Pineapples",
+            "localName": "Aborɔbɛ (Twi)",
+            "type": "Fruit",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 5,
+                    "weekly": 35,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 5,
+                    "weekly": 35,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 30,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 7,
+            "name": "Papayas",
+            "localEnglishName": "Papayas",
+            "localName": "Borɔferɛ (Twi)",
+            "type": "Fruit",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 50,
+            "soilType": "Well-drained soil"
+        },
+        {
+            "CropId": 8,
+            "name": "Tomatoes",
+            "localEnglishName": "Tomatoes",
+            "localName": "Ntoosi (Twi)",
+            "type": "Vegetable",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 40,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 9,
+            "name": "Peppers",
+            "localEnglishName": "Peppers",
+            "localName": "Mako (Twi)",
+            "type": "Vegetable",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 40,
+            "soilType": "Well-drained soil"
+        },
+        {
+            "CropId": 10,
+            "name": "Passion fruits",
+            "localEnglishName": "Passion fruits",
+            "localName": "Mframa no (Twi)",
+            "type": "Fruit",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 50,
+            "soilType": "Well-drained soil"
+        },
+        {
+            "CropId": 11,
+            "name": "Cassava",
+            "localEnglishName": "Cassava",
+            "localName": "Bankye (Twi)",
+            "type": "Root Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 100,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 12,
+            "name": "Rice",
+            "localEnglishName": "Rice",
+            "localName": "Emo (Twi)",
+            "type": "Grain",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 5,
+                    "weekly": 35,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 7,
+                    "weekly": 49,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 7,
+                    "weekly": 49,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 40,
+            "soilType": "Clay-loam"
+        },
+        {
+            "CropId": 13,
+            "name": "Yam",
+            "localEnglishName": "Yam",
+            "localName": "Bayere (Twi)",
+            "type": "Root Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 60,
+            "soilType": "Well-drained soil"
+        },
+        {
+            "CropId": 14,
+            "name": "Okra",
+            "localEnglishName": "Lady's Finger",
+            "localName": "Nkruma (Twi)",
+            "type": "Vegetable",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 30,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 15,
+            "name": "Cabbage",
+            "localEnglishName": "Cabbage",
+            "localName": "Kabeji (Twi)",
+            "type": "Vegetable",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 30,
+            "soilType": "Well-drained soil"
+        },
+        {
+            "CropId": 16,
+            "name": "Tobacco",
+            "localEnglishName": "Tobacco",
+            "localName": "Akrɔma (Twi)",
+            "type": "Cash Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 60,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 17,
+            "name": "Sorghum",
+            "localEnglishName": "Sorghum",
+            "localName": "Nyɔnyɔ (Twi)",
+            "type": "Grain",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 150,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 18,
+            "name": "Wheat",
+            "localEnglishName": "Wheat",
+            "localName": "Weati (Twi)",
+            "type": "Grain",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 100,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 19,
+            "name": "Cotton",
+            "localEnglishName": "Cotton",
+            "localName": "Nwi (Twi)",
+            "type": "Cash Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 70,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 20,
+            "name": "Alfalfa",
+            "localEnglishName": "Alfalfa",
+            "localName": "",
+            "type": "Forage",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 5,
+                    "weekly": 35,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 5,
+                    "weekly": 35,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 100,
+            "soilType": "Well-drained soil"
+        },
+        {
+            "CropId": 21,
+            "name": "Banana",
+            "localEnglishName": "Banana",
+            "localName": "Kofi/Apem (Twi)",
+            "type": "Fruit",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 5,
+                    "weekly": 35,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 7,
+                    "weekly": 49,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 7,
+                    "weekly": 49,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 50,
+            "soilType": "Rich, well-drained soil"
+        },
+        {
+            "CropId": 22,
+            "name": "Citrus",
+            "localEnglishName": "Citrus",
+            "localName": "Ankaa (Twi)",
+            "type": "Fruit",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 60,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 23,
+            "name": "Grape",
+            "localEnglishName": "Grape",
+            "localName": "",
+            "type": "Fruit",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 60,
+            "soilType": "Well-drained soil"
+        },
+        {
+            "CropId": 24,
+            "name": "Potato",
+            "localEnglishName": "Potato",
+            "localName": "Alata Bayere (Twi)",
+            "type": "Root Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 30,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 25,
+            "name": "Groundnut",
+            "localEnglishName": "Peanut",
+            "localName": "Nkateɛ (Twi)",
+            "type": "Legume",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 40,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 26,
+            "name": "Olive",
+            "localEnglishName": "Olive",
+            "localName": "",
+            "type": "Tree Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 1,
+                    "weekly": 7,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 100,
+            "soilType": "Well-drained soil"
+        },
+        {
+            "CropId": 27,
+            "name": "Safflower",
+            "localEnglishName": "Safflower",
+            "localName": "",
+            "type": "Oil Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 50,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 28,
+            "name": "Soybean",
+            "localEnglishName": "Soybean",
+            "localName": "Ntoosi Soya (Twi)",
+            "type": "Legume",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 40,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 29,
+            "name": "Sunflower",
+            "localEnglishName": "Sunflower",
+            "localName": "Anidasoɔ (Twi)",
+            "type": "Oil Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 50,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 30,
+            "name": "Bean",
+            "localEnglishName": "Bean",
+            "localName": "Aduane (Twi)",
+            "type": "Legume",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 40,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 31,
+            "name": "Pea",
+            "localEnglishName": "Pea",
+            "localName": "Apaa (Twi)",
+            "type": "Legume",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 30,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 32,
+            "name": "Sugarbeet",
+            "localEnglishName": "Sugarbeet",
+            "localName": "",
+            "type": "Root Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 60,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 33,
+            "name": "Sugarcane",
+            "localEnglishName": "Sugarcane",
+            "localName": "Kɔkɔsɛn (Twi)",
+            "type": "Grass",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 6,
+                    "weekly": 42,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 7,
+                    "weekly": 49,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 7,
+                    "weekly": 49,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 150,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 34,
+            "name": "Onion",
+            "localEnglishName": "Onion",
+            "localName": "Nkyene (Twi)",
+            "type": "Vegetable",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 30,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 35,
+            "name": "Watermelon",
+            "localEnglishName": "Watermelon",
+            "localName": "Ankaa Nsuo (Twi)",
+            "type": "Fruit",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 50,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 36,
+            "name": "Oil palm",
+            "localEnglishName": "Oil palm",
+            "localName": "Abɛ (Twi)",
+            "type": "Tree Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 100,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 37,
+            "name": "Coconut",
+            "localEnglishName": "Coconut",
+            "localName": "Kube (Twi)",
+            "type": "Tree Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 100,
+            "soilType": "Sandy-loam"
+        },
+        {
+            "CropId": 38,
+            "name": "Rubber",
+            "localEnglishName": "Rubber",
+            "localName": "Rubber (Twi)",
+            "type": "Tree Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 150,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 39,
+            "name": "Coffee",
+            "localEnglishName": "Coffee",
+            "localName": "Kofi (Twi)",
+            "type": "Tree Crop",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 50,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 40,
+            "name": "Mango",
+            "localEnglishName": "Mango",
+            "localName": "Mango (Twi)",
+            "type": "Fruit",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 4,
+                    "weekly": 28,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 100,
+            "soilType": "Well-drained soil"
+        },
+        {
+            "CropId": 41,
+            "name": "Shallot",
+            "localEnglishName": "Shallot",
+            "localName": "Nkyene Fufuo (Twi)",
+            "type": "Vegetable",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 30,
+            "soilType": "Loamy soil"
+        },
+        {
+            "CropId": 42,
+            "name": "Garden eggs",
+            "localEnglishName": "Eggplant",
+            "localName": "Nkontomire (Twi)",
+            "type": "Vegetable",
+            "growthStage": "Germination and Seedling / Vegetative Growth and Flowering / Fruiting and Maturation",
+            "waterNeeds": {
+                "Germination and Seedling": {
+                    "daily": 2,
+                    "weekly": 14,
+                    "durationDays": ""
+                },
+                "Vegetative Growth and Flowering": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                },
+                "Fruiting and Maturation": {
+                    "daily": 3,
+                    "weekly": 21,
+                    "durationDays": ""
+                }
+            },
+            "rootDepth": 50,
+            "soilType": "Loamy soil"
+        }
+    ]
+}
